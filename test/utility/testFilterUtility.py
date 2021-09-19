@@ -1,7 +1,8 @@
+from automated.model.Email import Email
 import json
-from re import I
 from types import SimpleNamespace
-from automated.model.Filter import Filter
+from typing import List
+from automated.model.Pattern import Pattern
 from automated.utility.FilterUtility import FilterUtility
 from pathlib import Path
 from unittest import TestCase
@@ -17,10 +18,10 @@ class testFilterUtility(TestCase):
             data = json.loads(file.read(), object_hook=lambda d: SimpleNamespace(**d))
         return data
 
-    def createFilterMock(self, pattern) -> Filter:
-        return Filter("test", pattern)
+    def createFilterMock(self, pattern) -> Pattern:
+        return Pattern("test", pattern)
 
-    def getMockEmails(self) :
+    def getMockEmails(self) -> List[Email] :
         return self.getDataFromJsonFile("emails")
 
     def test_findNetJobsEmailsByBody(self):

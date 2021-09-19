@@ -7,7 +7,7 @@ class Service:
     def __init__(self, source) -> None:
         self.source = source
 
-    def builtSource(self, **arg):
+    def builtSource(self, arg):
         pass
 
     def getNewEmails(self) -> List[Email]:

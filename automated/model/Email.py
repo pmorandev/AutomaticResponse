@@ -1,5 +1,4 @@
-
-class Email(object):
+class Email:
 
     def __init__(self, subject: str, body: str, fromSource: str) -> None:
         self.subject = subject
